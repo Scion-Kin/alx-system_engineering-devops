@@ -1,2 +1,17 @@
 #!/usr/bin/env bash
-'''This is a script generated documentation'''
+# This script is displaying "Best School" 10 times except for 4 and 8
+
+i=0
+
+while ((i<10)); do
+	if [ $i -eq 3 ]
+	then
+		echo "bad luck"
+	elif [ $i -eq 7 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((i+=1))
+done
