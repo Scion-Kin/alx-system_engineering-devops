@@ -3,10 +3,11 @@
 
 i=0
 
-for ((i=0;i<10;i++)); do
+while ((i<10)); do
 	if [ $i -eq 9 ]
 	then
 		echo "Hi"
 	fi
 	echo "Best School"
+	((i+=1))
 done
