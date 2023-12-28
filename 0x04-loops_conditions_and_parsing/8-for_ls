@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
-'''This is a script generated documentation'''
+# This scripts lists the directory contents in list format
+
+for i in *; do
+	if [[ ! $i == .* ]];
+	then
+		name=$(echo "$i" | cut -d'-' -f2-)
+		echo "$name"
+	fi
+done
