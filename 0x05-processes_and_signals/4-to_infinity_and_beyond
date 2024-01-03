@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# This script prints out a line in a never ending loop
+# This script prints out -To infinity and beyond- indefinitely.
 
 i=5
 while [ "$i" == "$i" ]; do
+	sleep 2
 	echo "To infinity and beyond"
 done
