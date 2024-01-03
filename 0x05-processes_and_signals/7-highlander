@@ -2,7 +2,7 @@
 # Displays a message indefinitely with a sleep of 2 between each iteration
 # Responds to SIGTERM with "I am invincible!!!"
 
-trap 'echo "I am invincible!!!"; exit' SIGTERM
+trap 'echo "I am invincible!!!";' SIGTERM
 i=5
 while [ "$i" == "$i" ]; do
     echo "To infinity and beyond indefinitely"
