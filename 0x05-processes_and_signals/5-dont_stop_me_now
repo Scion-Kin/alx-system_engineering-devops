@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script uses the kill command to stop an an infinitely running process
+
+pgrep -af '4-to_infinity_and_beyond' | awk '{print $1}' | xargs kill
