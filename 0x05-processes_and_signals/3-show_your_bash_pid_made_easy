@@ -2,5 +2,5 @@
 # This displays the PID, along with the process name, of processes whose name contain the word bash
 
 pgrep -af bash | while read -r pid cmd; do
-    echo "$pid $(basename $cmd)"
+    echo "$pid $(basename "$cmd")"
 done
