@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Stops the 7-highlander process forcefully
+
+pgrep -af '7-highlander' | awk '{print $1}' | xargs kill -9
