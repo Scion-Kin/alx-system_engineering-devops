@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This scripts terminates a target process using pkill command
+
+pkill -f '4-to_infinity_and_beyond'
