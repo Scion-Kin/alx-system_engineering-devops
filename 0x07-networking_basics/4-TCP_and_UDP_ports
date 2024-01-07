@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays the active listening ports
+
+netstat -ulpn | grep LISTENING
