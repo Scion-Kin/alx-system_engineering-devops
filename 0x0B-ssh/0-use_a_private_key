@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Connects to my alx ubuntu web server
-ssh -i ~/.ssh/school ubuntu@52.86.71.142
+ssh -i ~/.ssh/school ubuntu@52.91.131.105

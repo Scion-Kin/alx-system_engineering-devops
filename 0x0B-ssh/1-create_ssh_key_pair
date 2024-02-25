@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # Create the RSA key pair with the 4096 bits and passphrase betty
 ssh-keygen -t rsa -b 4096 -N "betty" -f school
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwvPqXTFKybZ6Rw1bzVurisz28qJU57t3RdsI9yB8sjaJ+RL4RWOHL+oslhN/Fjd1x9N/oOInSIYidMp+JSaIEzu9gXea00DhShGbcAFyr9SOWtapkJTx91uC3PFNs1jLxwvR/qKq3TtaSgcPTjoHObGwDJwQX8fSkcfWzgPyeMCjGJ/RZ60MZ7MyLt5DSwEmfBoYWtWyZDqy1GtudYJdn1u4sWOOZfyo3xv5S8EextJbJUhEEIvfJJGramUmO45FV8cBK08DS5yhF5pDfhEkNumF5xnNZpwASUo+3rd5De1oTzMzlBWFdY3Hc3a07tuTsOceSBB+sFZKIFzWOpnh+Gxigb8+rF6WNhKWun5QIpqNLMBpQcKOsKfXN6PeS9/yTSIil46EmekqiCUQAz4Iz4D/DlWBsICtq1Yk3iwvEW38JWSxANu/v1cxhRvLZkTZ2XoL66ugbIZPuW9Ht27Va5dK8JS7A1XQgnWRJaGrvDkwr9510mCi9fAJB21GLmdU= explo@Kali
