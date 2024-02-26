@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script installs nginx on a server and configures it to serve a hello world output
+
+apt install nginx -y
+rm /var/www/html/*.html
+echo "Hello World\!" > /var/www/html/index.html
+systemctl restart nginx
