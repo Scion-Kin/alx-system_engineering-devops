@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script uses scp to transfer a file from my local machine to a remote server
+
+if [ $# != 4 ]
+then
+    echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+
+else
+    scp -i "$4" "$1" "$2@$3:~/"
+fi
