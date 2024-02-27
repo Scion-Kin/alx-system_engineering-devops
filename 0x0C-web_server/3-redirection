@@ -5,7 +5,7 @@ sudo apt install nginx -y
 
 sudo rm /var/www/html/*.html
 
-sudo echo "Hello World\!" > /var/www/html/index.html
+echo "Hello World\!" > /var/www/html/index.html
 
 sudo systemctl restart nginx
 
