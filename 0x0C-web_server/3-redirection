@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
 # This script configures a new server to redirect on a certain page request
 
+sudo apt install nginx -y
+
+sudo rm /var/www/html/*.html
+
+sudo echo "Hello World\!" > /var/www/html/index.html
+
+sudo systemctl restart nginx
+
 sed -i '42i\   rewrite ^/redirect_me$ / permanent;' /etc/nginx/sites-available/default
