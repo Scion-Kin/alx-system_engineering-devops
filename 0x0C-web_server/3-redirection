@@ -9,6 +9,7 @@ rm /var/www/html/*.html
 
 echo "Hello World!" > /var/www/html/index.html
 
-sed -i '42i\        rewrite ^/redirect_me$ / permanent;' /etc/nginx/sites-availab>
+sed -i '42i\        rewrite ^/redirect_me$ / permanent;' /etc/nginx/sites-available/default
 
 /etc/init.d/nginx restart
+
