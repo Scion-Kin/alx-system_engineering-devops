@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 # This script configures a new server with a custom 404 page
 
+sudo apt update
+
 sudo apt install nginx -y
 
-sudo rm /var/www/html/*.html
-
 sudo chown -R "$USER":"$USER" /var/www/html
+
 sudo chmod -R 755 /var/www
+
+sudo rm /var/www/html/*.html
 
 echo "Hello World\!" > /var/www/html/index.html
 
