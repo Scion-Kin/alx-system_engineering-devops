@@ -1,22 +1,19 @@
 #!/usr/bin/env bash
 # This script configures a new server with a custom 404 page
 
-sudo apt update
+apt update
 
-sudo apt install nginx -y
+apt install nginx -y
 
-sudo chown -R "$USER":"$USER" /var/www/html
+rm /var/www/html/*.html
 
-sudo chmod -R 755 /var/www
+echo "Hello World!" > /var/www/html/index.html
 
-sudo rm /var/www/html/*.html
+sed -i '42i\        rewrite ^/redirect_me$ / permanent;' /etc/nginx/sites-available/default
 
-echo "Hello World\!" > /var/www/html/index.html
-
-sudo sed -i '42i\        rewrite ^/redirect_me$ / permanent;' /etc/nginx/sites-available/default
-
-sudo sed -i '43i\        error_page 404 /404.html;' /etc/nginx/sites-available/default
+sed -i '43i\        error_page 404 /404.html;' /etc/nginx/sites-available/default
 
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-sudo systemctl reload nginx
+/etc/init.d/nginx restart
+
