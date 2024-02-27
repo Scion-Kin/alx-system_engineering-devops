@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script configures a new server to redirect on a certain page request
+
+sed -i '42i\   rewrite ^/redirect_me / permanent;' /etc/nginx/sites-available/default
