@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
- 1-install_load_balancer
+# This script installs nginx and configures it's http response to contain a custom header
+
+sudo apt install nginx
+
+sudo sed -i "42i\	add_header X-Served-By $hostname;" /etc/nginx/sites_enabled/default
+
+sudo service nginx start
