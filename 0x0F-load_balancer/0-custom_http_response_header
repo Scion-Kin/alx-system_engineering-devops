@@ -3,6 +3,6 @@
 
 sudo apt install nginx
 
-sudo sed -i "42i\	add_header X-Served-By $hostname;" /etc/nginx/sites_enabled/default
+sudo sed -i "42i\	add_header X-Served-By $hostname;" /etc/nginx/sites-enabled/default
 
 sudo service nginx start
