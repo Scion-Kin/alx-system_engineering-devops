@@ -1,23 +1,20 @@
-# Installs a Nginx server and sets custom HTTP header
+# Creates new server with nginx and adds a custom http header
 
-exec {'update':
-  provider => shell,
-  command  => 'sudo apt-get -y update',
-  before   => Exec['install Nginx'],
+exec { 'update system':
+        command => '/usr/bin/apt-get update',
 }
 
-exec {'install Nginx':
-  provider => shell,
-  command  => 'sudo apt-get -y install nginx',
-  before   => Exec['add_header'],
+package { 'nginx':
+	ensure => 'installed',
+	require => Exec['update system']
 }
 
-exec { 'add_header':
-  provider    => shell,
-  command     => 'sudo sed -i "42i\	add_header X-Served-By $(hostname);" /etc/nginx/nginx.conf'
+exec {'HTTP header':
+	command => 'sed -i "42i\	add_header X-Served-By $(hostname);" /etc/nginx/sites-available/default',
+	provider => 'shell'
 }
 
-exec { 'restart Nginx':
-  provider => shell,
-  command  => 'sudo service nginx restart',
+service {'nginx':
+	ensure => running,
+	require => Package['nginx']
 }
