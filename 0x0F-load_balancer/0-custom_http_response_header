@@ -17,4 +17,4 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 sudo sed -i "44i\	add_header X-Served-By $(hostname);" /etc/nginx/sites-enabled/default
 
-sudo /etc/init.d/nginx restart
+sudo service nginx start
