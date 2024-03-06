@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script stops all services running on port 80 and starts nginx
-sudo kill "$(sudo lsof -i :80)"
+sudo kill "$(sudo lsof -t -i :80)"
 sudo service nginx start
