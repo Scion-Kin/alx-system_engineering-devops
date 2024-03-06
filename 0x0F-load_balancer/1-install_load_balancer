@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # This script installs and configures a new ubuntu server with haproxy for load balancing
 
-sudo apt-get update
-sudo apt-get install --no-install-recommends software-properties-common
+sudo apt-get update -y
+sudo apt-get install --no-install-recommends software-properties-common -y
 sudo add-apt-repository ppa:vbernat/haproxy-2.0
 
-sudo apt-get install haproxy=2.0.\*
+sudo apt-get install haproxy=2.0.\* -y
 
 configuration=\
 "
