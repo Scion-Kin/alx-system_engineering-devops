@@ -2,4 +2,3 @@
 # This script solves a nginx error
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 sudo kill -9 "$(sudo lsof -t -i :80)"
-sudo service nginx restart
