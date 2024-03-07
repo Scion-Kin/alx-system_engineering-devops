@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # This script solves a nginx error
 
-service nginx restart
+sudo kill -9 "$(sudo lsof -t -i :80)"
+sudo service nginx restart
