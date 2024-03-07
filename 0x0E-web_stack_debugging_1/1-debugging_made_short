@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # This script solves a nginx error
-sudo service nginx restart
-echo "" | sudo dd status=none of=/run/nginx.pid
+sudo kill -9 "$(sudo lsof -t -i :80)"
