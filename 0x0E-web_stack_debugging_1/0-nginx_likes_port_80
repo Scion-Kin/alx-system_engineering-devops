@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # This script solves a nginx error
-
-sudo kill -9 "$(sudo lsof -t -i :80)"
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
