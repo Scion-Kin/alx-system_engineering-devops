@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script solves a nginx error
 
-rm /etc/nginx/sites-enabled/default
+rm -f /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 sudo service nginx restart
 
