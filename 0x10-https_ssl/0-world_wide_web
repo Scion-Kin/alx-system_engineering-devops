@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script finds DNS records information of a given domain or subdomain
+# This script finds DNS record information of a given domain or subdomain
 
 fullquery_domain="$2.$1"
 
