@@ -19,5 +19,5 @@ if [ ! "$2" ]; then
 	everything "$1"
 else
 	return_string=$(dig "$fullquery_domain" | awk '/ANSWER SECTION/ {getline; print}')
-	echo "The subdomain $2 is a $(echo "$return_string" | awk '{print $4}') record and points to $(echo "$return_string" | awk '{print $NF}')"
+	echo "The subdomain $2 is a $(echo "$return_string" | awk '{print $4}') record and points to $(echo "$return_string" | awk '{print $5}')"
 fi
