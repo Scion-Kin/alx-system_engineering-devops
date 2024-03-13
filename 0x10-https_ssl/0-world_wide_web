@@ -9,10 +9,10 @@ everything() {
 	web_01_data=$(dig "web-01.$1" | awk '/ANSWER SECTION/ {getline; print}')
 	web_02_data=$(dig "web-02.$1" | awk '/ANSWER SECTION/ {getline; print}')
 
-	echo "The subdomain www is a $(echo "$www_data" | awk '{print $4}') record and points to $(echo "$www_data" | awk '{print $NF}')"
-	echo "The subdomain lb-01 is a $(echo "$lb_01_data" | awk '{print $4}') record and points to $(echo "$lb_01_data" | awk '{print $NF}')"
-	echo "The subdomain web-01 is a $(echo "$web_01_data" | awk '{print $4}') record and points to $(echo "$web_01_data" | awk '{print $NF}')"
-	echo "The subdomain web-02 is a $(echo "$web_02_data" | awk '{print $4}') record and points to $(echo "$web_02_data" | awk '{print $NF}')"
+	echo "The subdomain www is a $(echo "$www_data" | awk '{print $4}') record and points to $(echo "$www_data" | awk '{print $5}')"
+	echo "The subdomain lb-01 is a $(echo "$lb_01_data" | awk '{print $4}') record and points to $(echo "$lb_01_data" | awk '{print $5}')"
+	echo "The subdomain web-01 is a $(echo "$web_01_data" | awk '{print $4}') record and points to $(echo "$web_01_data" | awk '{print $5}')"
+	echo "The subdomain web-02 is a $(echo "$web_02_data" | awk '{print $4}') record and points to $(echo "$web_02_data" | awk '{print $5}')"
 }
 
 if [ ! "$2" ]; then
