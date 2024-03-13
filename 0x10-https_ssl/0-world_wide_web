@@ -1,3 +1,23 @@
 #!/usr/bin/env bash
 # This script finds DNS records information of a given domain or subdomain
 
+fullquery_domain="$2.$1"
+
+everything() {
+	www_data=$(dig "www.$1" | awk '/ANSWER SECTION/ {getline; print}')
+	lb_01_data=$(dig "lb-01.$1" | awk '/ANSWER SECTION/ {getline; print}')
+	web_01_data=$(dig "web-01.$1" | awk '/ANSWER SECTION/ {getline; print}')
+	web_02_data=$(dig "web-02.$1" | awk '/ANSWER SECTION/ {getline; print}')
+
+	echo "The subdomain www is a $(echo "$www_data" | awk '{print $4}') record and points to $(echo "$www_data" | awk '{print $NF}')"
+	echo "The subdomain lb-01 is a $(echo "$lb_01_data" | awk '{print $4}') record and points to $(echo "$lb_01_data" | awk '{print $NF}')"
+	echo "The subdomain web-01 is a $(echo "$web_01_data" | awk '{print $4}') record and points to $(echo "$web_01_data" | awk '{print $NF}')"
+	echo "The subdomain web-02 is a $(echo "$web_02_data" | awk '{print $4}') record and points to $(echo "$web_02_data" | awk '{print $NF}')"
+}
+
+if [ ! "$2" ]; then
+	everything "$1"
+else
+	return_string=$(dig "$fullquery_domain" | awk '/ANSWER SECTION/ {getline; print}')
+	echo "The subdomain $2 is a $(echo "$return_string" | awk '{print $4}') record and points to $(echo "$return_string" | awk '{print $NF}')"
+fi
