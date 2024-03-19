@@ -1,1 +1,1 @@
-This is a repository containing the shell basics project answers
+Part 3 of web stack debugging
