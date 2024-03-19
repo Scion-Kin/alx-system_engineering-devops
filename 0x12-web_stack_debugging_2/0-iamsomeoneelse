@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # runs the whoami command under a specified user
 
-whoami -u "$1"
+su "$1" -s /bin/bash/ -c "whoami"
