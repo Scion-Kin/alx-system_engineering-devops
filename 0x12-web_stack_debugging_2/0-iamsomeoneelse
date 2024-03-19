@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # runs the whoami command under a specified user
 
-runuser -u "$1" whoami
+if [ $# -ge 1 ]; then
+	runuser -u "$1" whoami
+fi
