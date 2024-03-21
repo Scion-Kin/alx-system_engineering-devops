@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Makes a backup file of all the databases in MySQL
+
+if [ $# -eq 1 ]; then
+
+	sudo mysqldump --password="$1" --all-databases > backup.sql
+	echo 'backup.sql'
+	tar -czf "$(date +'%d-%m-%Y').tar.gz" backup.sql
+
+fi
