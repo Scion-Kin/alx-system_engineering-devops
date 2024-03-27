@@ -2,9 +2,9 @@
 ''' This module returns information about an employees' TODO
 list progress for a given employee ID. '''
 
+import csv
 import requests
 import sys
-import csv
 
 
 if __name__ == '__main__' and sys.argv[1]:
