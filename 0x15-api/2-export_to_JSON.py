@@ -13,14 +13,20 @@ if __name__ == '__main__' and sys.argv[1]:
 
     id = int(sys.argv[1])
     all_data = response.json()
-    tasks = []
+
+    employee = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                            .format(id))
+    employee = employee.json()
+    name = employee['username']
 
     with open(f'{id}.json', 'w') as file:
         temp = {id: []}
         for i in all_data:
             if i['userId'] == id:
 
-                data = {"task": i['title'], "completed": i['completed']}
+                data = {"task": i['title'],
+                        "completed": i['completed'],
+                        "username": name}
 
                 temp[id].append(data)
 
