@@ -13,7 +13,6 @@ if __name__ == '__main__' and sys.argv[1]:
 
     id = int(sys.argv[1])
     all_data = response.json()
-    tasks = []
 
     employee = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                             .format(id))
