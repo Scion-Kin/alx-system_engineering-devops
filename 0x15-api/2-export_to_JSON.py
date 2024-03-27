@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ''' This module returns information about an employees' TODO
-list progress for a given employee ID. '''
+list progress for a given employee ID and saves to a json file '''
 
 import json
 import requests
