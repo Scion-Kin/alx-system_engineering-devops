@@ -33,4 +33,4 @@ if __name__ == '__main__' and sys.argv[1]:
         name, count, total_tasks))
 
     for i in tasks:
-        print(f"\t{i}")
+        print(f"\t {i}")
