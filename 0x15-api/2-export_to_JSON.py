@@ -2,7 +2,7 @@
 ''' This module returns information about an employees' TODO
 list progress for a given employee ID. '''
 
-import csv
+import json
 import requests
 import sys
 
@@ -15,15 +15,13 @@ if __name__ == '__main__' and sys.argv[1]:
     all_data = response.json()
     tasks = []
 
-    employee = requests.get('https://jsonplaceholder.typicode.com/users/{}'
-                            .format(id))
-    employee = employee.json()
-    name = employee['username']
-
-    with open(f'{id}.csv', 'w') as file:
-        csv_writer = csv.writer(file, quoting=csv.QUOTE_ALL)
+    with open(f'{id}.json', 'w') as file:
+        temp = {id: []}
         for i in all_data:
             if i['userId'] == id:
-                temp = [str(id), str(name), i['completed'], i['title']]
 
-                csv_writer.writerow(temp)
+                data = {"task": i['title'], "completed": i['completed']}
+
+                temp[id].append(data)
+
+        json.dump(temp, file)
