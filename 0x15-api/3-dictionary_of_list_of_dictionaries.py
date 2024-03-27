@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
         data = {}
         for i in all_users:
-            employee = requests.get('https://jsonplaceholder.typicode.com/\
-            users/{}'.format(i))
+            employee = requests.get(
+                'https://jsonplaceholder.typicode.com/users/{}'.format(i))
             employee = employee.json()
             name = employee['username']
 
@@ -35,8 +35,6 @@ if __name__ == '__main__':
                                  "completed": j['completed']}
 
                     temp.append(user_data)
-            print('finished handling user {}. Name: {}\n\n'.format(i, name))
-
             data[i] = temp
 
         json.dump(data, file)
