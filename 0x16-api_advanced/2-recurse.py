@@ -3,7 +3,7 @@
 import requests
 
 
-def top_ten(subreddit):
+def recurse(subreddit, hot_list=[], count=0):
     ''' fetches a given subreddit's hot list '''
 
     headers = {"User-Agent": ("Mozilla/5.0 (X11; Linux x86_64; rv:109.0)\
@@ -12,13 +12,15 @@ def top_ten(subreddit):
                        .format(subreddit), headers=headers,
                        allow_redirects=False)
 
-    if req.status_code == 200:
-        req = req.json()
+    if req.status_code != 200:
+        return None
 
-        hot_list = req["data"]["children"]
+    req = req.json()
 
-        for i in range(10):
-            print('{}'.format(hot_list[i]["data"]["title"]))
+    hot = req["data"]["children"]
 
-    else:
-        print("None")
+    if count == len(hot):
+        return hot_list
+
+    hot_list.append(hot[count]["data"]["title"])
+    return recurse(subreddit, hot_list, count + 1)
