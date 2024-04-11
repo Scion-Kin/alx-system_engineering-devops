@@ -1,4 +1,4 @@
-# automated puppet fix (to find out why Apache is returning a 500 error)
+# automated puppet fix for a php configuration error
 
 exec { 'Fix wordpress site':
   require  => shell,
