@@ -35,13 +35,13 @@ def count_words(subreddit, word_list, count=0, hot_list=[], keyword_dict={}):
     for j in word_list:
         j_len = len(j) - 1
         for i in range(len(title)):
-            if i + len(j) <= len(title) and (title[i] == j[0] or
-                ord(title[i]) == ord(j[0]) - 32 or
-                ord(title[i]) == ord(j[0]) + 32) and\
-                title[i + j_len] == j[-1] and\
-                title[i + j_len + 1] == ' ':
+            if i + len(j) <= len(title) and\
+                (title[i] == j[0] or ord(title[i]) == ord(j[0]) - 32 or
+                 ord(title[i]) == ord(j[0]) + 32) and\
+                    title[i + j_len] == j[-1] and\
+                    title[i + j_len + 1] == ' ':
 
                 keywords[j] = keywords[j] + 1
-    
+
     hot_list.append(title)
     return count_words(subreddit, word_list, count + 1, hot_list, keywords)
