@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script reloads gunicorn workers gracefully
 
-pgrep 'gunicorn' | tail +2 | xargs kill -HUP
+pgrep 'gunicorn' | tail -n +2 | xargs -r kill -15
