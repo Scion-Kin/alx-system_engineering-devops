@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script reloads gunicorn workers gracefully
 
-sudo kill -HUP $(pgrep -x "gunicorn")
+kill -HUP $(pgrep -x "gunicorn")
